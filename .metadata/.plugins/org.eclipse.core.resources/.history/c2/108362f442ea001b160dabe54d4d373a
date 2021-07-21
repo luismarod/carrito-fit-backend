@@ -1,0 +1,14 @@
+package com.example.demo.models.repository;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.models.entity.Ticket;
+import com.example.demo.models.entity.Usuario;
+
+public interface UsuarioRepository extends CrudRepository<Usuario, Long>{
+	public Usuario findUsuarioByUsername(String username);
+	
+	@Query(value = "SELECT * FROM USUARIOS WHERE VIP = true && MONTH(FECHA_CAMBIO_CATEGORIA) = MONTH('2021-?1-01')", nativeQuery = true)
+	public Iterable<Usuario> findUsuarioVipByMes(int mes);
+}

@@ -1,0 +1,25 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.models.entity.Usuario;
+import com.example.demo.models.repository.ProductoRepository;
+
+public class ProductoServiceImpl implements ProductoService{
+
+	@Autowired
+	protected ProductoRepository repository;
+	
+	@Override
+	public Iterable<Usuario> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario save(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

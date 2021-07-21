@@ -1,0 +1,37 @@
+package com.example.demo.models.entity;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.LongArraySerializer;
+
+
+
+@Entity
+@Table(name ="tickets")
+public class Ticket {
+	
+	private Long id;
+	
+	private Usuario usuario;
+	
+	@Column(name = "create_at")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createAt;
+	
+	private List<Producto> productos;
+	
+	private Double monto;
+	
+	@Column(name = "producto_bonificado")
+	private Double descuento;
+	
+	
+	private Producto productoBonificado;
+}

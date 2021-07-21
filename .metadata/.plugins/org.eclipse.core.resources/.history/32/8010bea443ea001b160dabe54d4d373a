@@ -1,0 +1,23 @@
+package com.example.demo.services;
+
+import java.util.Date;
+import java.util.Optional;
+
+import com.example.demo.models.entity.Usuario;
+
+public interface UsuarioService {
+
+	public Iterable<Usuario> findAll();
+
+	public Optional<Usuario> findById(Long id);
+
+	public Usuario save(Usuario usuario);
+
+	public void deleteById(Long id);
+	
+	public Usuario findUsuarioByUsername(String username);
+	
+	public Iterable<Usuario> findUsuarioVipByMes(int mes);
+	
+	public double diferenciaDiasEntreFechas(Date fecha1, Date fecha2);
+}
